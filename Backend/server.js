@@ -13,8 +13,15 @@ const pool = new Pool({
     port: 5432,
 });
 
-app.use(cors({
-    origin: ['http://13.201.63.96:5500', 'http://127.0.0.1:5500']
+app.use(cors({ 
+    origin: [
+        'http://13.201.63.96:8018',
+        'http://13.201.63.96:8019',
+        'http://13.201.63.96:5500',
+        'http://127.0.0.1:5500'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
 }));
 app.use(express.json());
 
